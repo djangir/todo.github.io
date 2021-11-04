@@ -6,12 +6,12 @@ import { useState } from 'react';
 function App() {
   let oldData = [
     {
-      title: "Title",
-      about: "About This"
+      title: "Inter Notes Here !",
+      about: "Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator."
     },
     {
-      title: "Title 2",
-      about: "About This 2"
+      title: "Notes Title 2",
+      about: "Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator."
     }
   ];
 
@@ -68,7 +68,7 @@ function App() {
         {
           data.map((dataa, index) => {
             return (
-              <List key={ index } title={ dataa.title } about={ dataa.about } status="a" >
+              <List key={ index } title={ dataa.title } about={ dataa.about } >
               </List>
             );
           })

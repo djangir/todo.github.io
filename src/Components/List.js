@@ -3,46 +3,30 @@ import { useState } from 'react';
 
 function List(props) {
 
-    let status = props.status;
-    const [state, setstate] = useState(status);
+    const [bgColor, setBgColor] = useState('bg-danger card my-3 m-auto text-white');
+
+    function newBgColor(clr) {
+        setBgColor(clr + " card my-3 m-auto");
+    }
 
     return (
         <>
-            { (state === 'a') ? (
-                <>
-                    <div className="card my-2 m-auto bg-danger text-white" style={ { width: "18rem" } }>
-                        <div className="card-body">
-                            <h5 className='card-title'> { props.title } </h5>
-                            <p className="card-text">{ props.about }</p>
-                            <span onClick={ () => (setstate('b')) }> Status B </span> |
-                            <span onClick={ () => (setstate('c')) }> Status C </span>
-                        </div>
+            <div className={ bgColor } style={ { width: "19rem" } }>
+                <div className="card-body">
+                    <div className='text-end mb-3'>
+                        <button className='close' onClick={ () => setBgColor('d-none') }>X</button>
                     </div>
-                </>
-            ) :
-                (state === 'b') ? (
-                    <>
-                        <div className="card my-2 m-auto bg-warning" style={ { width: "18rem" } }>
-                            <div className="card-body">
-                                <h5 className='card-title'> { props.title } </h5>
-                                <p className="card-text">{ props.about }</p>
-                                <span onClick={ () => (setstate('a')) }> Status A </span> |
-                                <span onClick={ () => (setstate('c')) }> Status C </span>
-                            </div>
-                        </div>
-                    </>
-                ) :
-                    <>
-                        <div className="card my-2 m-auto bg-success text-white" style={ { width: "18rem" } }>
-                            <div className="card-body">
-                                <h5 className='card-title'> { props.title } </h5>
-                                <p className="card-text">{ props.about }</p>
-                                <span onClick={ () => (setstate('a')) }> Status A </span> |
-                                <span onClick={ () => (setstate('b')) }> Status B </span>
-                            </div>
-                        </div>
-                    </>
-            }
+                    <h5 className='card-title text-center'> { props.title } </h5>
+                    <p className="card-text">{ props.about }</p>
+
+                    <span className='bg-danger' onClick={ () => newBgColor('bg-danger text-white ') }></span>
+
+                    <span className='bg-warning mx-2' onClick={ () => newBgColor('bg-warning') }></span>
+
+                    <span className='bg-success' onClick={ () => newBgColor('bg-success text-white ') }></span>
+
+                </div >
+            </div >
         </>
     );
 }

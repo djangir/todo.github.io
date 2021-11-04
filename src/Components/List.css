@@ -1,3 +1,22 @@
 span{
-    cursor: pointer;
+    cursor: pointer; 
+    padding: 10px;
+    margin: auto;
+    border-radius: 1000px;
+    display: inline-block;
+}
+
+.close{
+    background: white;
+    font-weight: bolder;
+    margin: auto;
+    border: none;
+    outline: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 5px;
+    color: red;
+}
+.card-text{
+    text-align: justify;
 }

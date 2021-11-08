@@ -14,7 +14,6 @@ function App() {
       about: "Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator."
     }
   ];
-
   const [title, settitle] = useState('');
   const [about, setabout] = useState('');
   const [data, setdata] = useState(oldData);
